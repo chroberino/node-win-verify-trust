@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "module": "nodenext",
-    "allowJs": true,
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "node16",
+    "outDir": "./dist",
     "strict": true,
-    "noImplicitAny": false
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "sourceMap": true
   },
-  "exclude":[
-    "eslint.config.js",
-    "node_modules",
-    "test"
-  ]
+  "include": ["src/**/*"]
 }

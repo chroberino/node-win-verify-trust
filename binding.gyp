@@ -6,10 +6,10 @@
                 "cflags!": [ "-fno-exceptions" ],
                 "cflags_cc!": [ "-fno-exceptions" ],
                 "sources": [
-                    "lib/src/napi.cpp",
-                    "lib/src/verifyTrust.cpp",
-                    "lib/src/certificate.cpp",
-                    "lib/src/string.cpp"
+                    "native/src/napi.cpp",
+                    "native/src/verifyTrust.cpp",
+                    "native/src/certificate.cpp",
+                    "native/src/string.cpp"
                 ],
                 "msvs_settings": {
                     "VCCLCompilerTool": {
