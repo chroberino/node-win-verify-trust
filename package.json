@@ -1,5 +1,5 @@
 {
-  "name": "@chrober/win-verify-trust",
+  "name": "@chroberino/node-win-verify-trust",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
