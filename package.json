@@ -1,5 +1,8 @@
 {
-  "name": "@br-automation/win-verify-trust",
+  "name": "@chrober/win-verify-trust",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "version": "0.1.0",
   "description": "Check the signature of a file using the WinVerifyTrust API",
   "type": "commonjs",
@@ -7,22 +10,23 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./types/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "files": [
     "dist",
-    "build/Release",
     "binding.gyp"
   ],
   "engines": {
     "node": ">=20.12.2",
     "npm": "^10.5.0"
   },
-  "gypfile": false,
+  "gypfile": true,
   "scripts": {
-    "build": "tsc && node-gyp rebuild",
+    "install": "node-gyp rebuild",
+    "prepublishOnly": "npm install --ignore-scripts && npm run build",
+    "build": "tsc",
     "clean": "node-gyp clean && rimraf dist build",
     "lint": "eslint \"src/**/*.ts\"",
     "test": "node --test",
@@ -43,22 +47,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xan105/node-win-verify-trust.git"
+    "url": "git+https://github.com/chroberino/node-win-verify-trust.git"
   },
   "bugs": {
-    "url": "https://github.com/xan105/node-win-verify-trust/issues"
+    "url": "https://github.com/chroberino/node-win-verify-trust/issues"
   },
-  "homepage": "https://github.com/xan105/node-win-verify-trust#readme",
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/xan105"
-    },
-    {
-      "type": "paypal",
-      "url": "https://www.paypal.me/xan105"
-    }
-  ],
+  "homepage": "https://github.com/chroberino/node-win-verify-trust#readme",
+  "dependencies": {
+    "node-addon-api": "^8.3.1"
+  },
   "devDependencies": {
     "@types/node": "^20.14.2",
     "typescript": "^5.4.0",
@@ -66,8 +63,5 @@
     "typescript-eslint": "^8.26.1",
     "globals": "^16.0.0",
     "rimraf": "^5.0.0"
-  },
-  "dependencies": {
-    "node-addon-api": "^8.3.1"
   }
 }
